@@ -19,7 +19,7 @@ package easybox2d
 	[Event(name="collision",type="easybox2d.EasyBox2DEvent")]
 	
 	/**
-	 * 简化Box2D使用的类
+	 * 简化Box2D使用的类，提供了一些基本功能
 	 * 
 	 * @author flashyiyi
 	 * 
