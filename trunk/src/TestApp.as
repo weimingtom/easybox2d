@@ -9,6 +9,13 @@
 	import flash.geom.Point;
 
 	[SWF(width="640",height="360",frameRate="30")]
+	
+	/**
+	 * 效果同Box2D的第一个示例，两个小人。
+	 * 
+	 * @author flashyiyi
+	 * 
+	 */
 	public class TestApp extends Sprite
 	{
 		public function TestApp()
@@ -85,7 +92,7 @@
 				var upperLegL:b2Body=EasyBox2D.instance.register(null,{x:startX-8,y:startY+85,width:15,height:44,density:1.0,friction:0.4,restitution:0.1})
 				var upperLegR:b2Body=EasyBox2D.instance.register(null,{x:startX+8,y:startY+85,width:15,height:44,density:1.0,friction:0.4,restitution:0.1})
 				
-				//下腿
+				//小腿
 				var lowerLegL:b2Body=EasyBox2D.instance.register(null,{x:startX-8,y:startY+120,width:12,height:40,density:1.0,friction:0.4,restitution:0.1})
 				var lowerLegR:b2Body=EasyBox2D.instance.register(null,{x:startX+8,y:startY+120,width:12,height:40,density:1.0,friction:0.4,restitution:0.1})
 			
@@ -117,7 +124,7 @@
 				
 			}
 			
-			//创建梯子
+			//创建台阶
 			for (var j:int = 1; j <= 10; j++)
 			{
 				EasyBox2D.instance.register(null,{x:10*j,y:150 + 20*j,width:20*j,height:20,density:0.0,friction:0.4,restitution:0.3})
