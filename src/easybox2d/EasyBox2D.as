@@ -197,6 +197,8 @@ package easybox2d
 			
 			var bodyDef:b2BodyDef=new b2BodyDef();
 			bodyDef.position.Set(parms.x/m_physScale,parms.y/m_physScale);
+			if (parms.rotation)
+				bodyDef.angle = parms.rotation;
 			
 			var shapeDef:b2ShapeDef;
 			
@@ -281,6 +283,21 @@ package easybox2d
 		public function getBody(obj:*):b2Body
 		{
 			return bodyDict[obj];
+		}
+		
+		/**
+		 * 为一个物理物品提供冲力
+		 * 
+		 * @param body	物理物体
+		 * @param impulse	冲力矢量
+		 * @param torque	旋力
+		 * 
+		 */
+		public function applyImpulse(body:b2Body,impulse:Point,torque:int = 0):void
+		{
+			var v:b2Vec2=new b2Vec2(impulse.x,impulse.y);
+			body.ApplyImpulse(v,body.GetWorldCenter());
+			body.ApplyTorque(torque);
 		}
 		
 		/**
