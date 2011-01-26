@@ -355,7 +355,7 @@ package easybox2d
 				var body:b2Body=bodyDict[obj];
 				obj.x=body.m_xf.position.x*m_physScale;
 				obj.y=body.m_xf.position.y*m_physScale;
-				obj.rotation = body.m_xf.R.GetAngle();
+				obj.rotation = body.m_xf.R.GetAngle() / Math.PI * 180;
 			}
 		}
 		
